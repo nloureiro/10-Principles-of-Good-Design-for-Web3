@@ -18,12 +18,6 @@ build/
 .next/
 out/
 
-# Database
-*.db
-*.sqlite
-*.sqlite3
-migrations/
-
 # Generated assets (if auto-generated, remove this line if it's a project asset)
 generated-*
 *-generated.*
@@ -143,9 +137,6 @@ Thumbs.db
 # Cloudflare Workers
 .dev.vars
 wrangler.toml.bak
-
-# Drizzle
-drizzle/
 
 # Testing
 .coverage/
