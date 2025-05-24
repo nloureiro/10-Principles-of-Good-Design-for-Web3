@@ -70,8 +70,11 @@ export default function PrincipleDetail() {
   const nextPrinciple = getPrincipleByNumber(principle.number === 10 ? 1 : principle.number + 1);
   
   return (
-    <section className="min-h-screen bg-background flex flex-col">
-      <div className="container flex-1">
+    <section className="min-h-screen bg-background flex flex-col relative">
+      {/* Full-screen animated line background */}
+      <AnimatedLine principleNumber={principle.number} />
+      
+      <div className="container flex-1 relative z-10">
         <div className="max-w-4xl mx-auto pt-16">
           {/* Principle number in top right */}
           <div className="flex justify-end mb-8">
@@ -88,12 +91,11 @@ export default function PrincipleDetail() {
             </h1>
             <p className="text-2xl text-secondary max-w-2xl">{principle.summary}</p>
           </div>
+        </div>
+      </div>
 
-          {/* Animated line */}
-          <div className="my-12">
-            <AnimatedLine />
-          </div>
-
+      <div className="container flex-1 relative z-10">
+        <div className="max-w-4xl mx-auto">
           {/* Content */}
           <div className="mb-20">
             <div 
