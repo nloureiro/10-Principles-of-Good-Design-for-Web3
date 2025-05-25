@@ -86,19 +86,19 @@ export default function PrincipleDetail() {
       <div className="container flex-1 relative z-10">
         <div className="max-w-4xl mx-auto pt-16">
           {/* Principle number in top right */}
-          <div className="flex justify-end mb-8">
-            <span className="text-6xl font-bold text-accent opacity-50 font-serif" aria-label={`Principle ${principle.number}`}>
+          <div className="flex justify-end mb-4">
+            <span className="text-9xl font-bold text-accent opacity-50 font-serif" aria-label={`Principle ${principle.number}`}>
               {principle.number}
             </span>
           </div>
 
           {/* Main heading */}
           <header className="mb-16">
-            <p className="text-xl text-secondary mb-6 font-serif">Good design for Web3</p>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-primary font-serif leading-none mb-8">
+            <p className="text-xl md:text-3xl text-secondary font-serif">Good design for Web3</p>
+            <h1 className="text-4xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-primary font-serif leading-none mb-8">
               is {principle.title.toLowerCase()}
             </h1>
-            <h2 className="text-xl md:text-2xl lg:text-3xl text-secondary max-w-2xl font-sans font-normal">{principle.summary}</h2>
+            <h2 className="text-xl md:text-xl lg:text-2xl text-secondary max-w-2xl font-sans font-normal text-primary">{principle.summary}</h2>
           </header>
         </div>
       </div>
