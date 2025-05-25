@@ -5,4 +5,10 @@ export interface Principle {
   summary: string;
   image: string;
   content: string;
+  metadata?: {
+    keywords?: string[];
+    description?: string;
+    ogImage?: string;
+    twitterDescription?: string;
+  };
 }

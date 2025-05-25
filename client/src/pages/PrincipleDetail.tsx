@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useMemo, useEffect } from "react";
 import { getPrincipleBySlug, getPrincipleByNumber, getAllPrinciples } from "@/lib/principles";
 import { renderMarkdown } from "@/utils/markdownUtils";
+import { generatePrincipleMetadata, updatePageMetadata } from "@/utils/metadataUtils";
 import AnimatedLine from "@/components/AnimatedLine";
 
 export default function PrincipleDetail() {
@@ -13,81 +14,11 @@ export default function PrincipleDetail() {
   const principle = useMemo(() => getPrincipleBySlug(slug), [slug]);
   const allPrinciples = useMemo(() => getAllPrinciples(), []);
   
-  // SEO: Update document title and meta tags
+  // SEO: Update metadata for each principle page
   useEffect(() => {
     if (principle) {
-      document.title = `${principle.title} - 10 Principles of Good Design for Web3`;
-      
-      // Update meta description
-      const metaDescription = document.querySelector('meta[name="description"]');
-      if (metaDescription) {
-        metaDescription.setAttribute('content', `${principle.summary} Learn about the ${principle.title.toLowerCase()} principle of good Web3 design with examples and practical tips.`);
-      } else {
-        const meta = document.createElement('meta');
-        meta.name = 'description';
-        meta.content = `${principle.summary} Learn about the ${principle.title.toLowerCase()} principle of good Web3 design with examples and practical tips.`;
-        document.head.appendChild(meta);
-      }
-
-      // Update Open Graph tags
-      const updateOrCreateMeta = (property: string, content: string) => {
-        let meta = document.querySelector(`meta[property="${property}"]`);
-        if (meta) {
-          meta.setAttribute('content', content);
-        } else {
-          meta = document.createElement('meta');
-          meta.setAttribute('property', property);
-          meta.setAttribute('content', content);
-          document.head.appendChild(meta);
-        }
-      };
-
-      updateOrCreateMeta('og:title', `${principle.title} - 10 Principles of Good Design for Web3`);
-      updateOrCreateMeta('og:description', principle.summary);
-      updateOrCreateMeta('og:type', 'article');
-      updateOrCreateMeta('og:url', `${window.location.origin}/principles/${principle.slug}`);
-      updateOrCreateMeta('og:image', principle.image);
-
-      // Twitter Card tags
-      updateOrCreateMeta('twitter:card', 'summary_large_image');
-      updateOrCreateMeta('twitter:title', `${principle.title} - 10 Principles of Good Design for Web3`);
-      updateOrCreateMeta('twitter:description', principle.summary);
-      updateOrCreateMeta('twitter:image', principle.image);
-
-      // Structured data for SEO
-      const structuredData = {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": `${principle.title} - Good Design for Web3`,
-        "description": principle.summary,
-        "image": principle.image,
-        "author": {
-          "@type": "Organization",
-          "name": "10 Principles of Good Design for Web3"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "10 Principles of Good Design for Web3"
-        },
-        "mainEntityOfPage": {
-          "@type": "WebPage",
-          "@id": `${window.location.origin}/principles/${principle.slug}`
-        },
-        "articleSection": "Design Principles",
-        "keywords": `Web3 design, ${principle.title.toLowerCase()}, blockchain UX, decentralized design, crypto design principles`
-      };
-
-      // Remove existing structured data script
-      const existingScript = document.querySelector('script[type="application/ld+json"]');
-      if (existingScript) {
-        existingScript.remove();
-      }
-
-      // Add new structured data
-      const script = document.createElement('script');
-      script.type = 'application/ld+json';
-      script.textContent = JSON.stringify(structuredData);
-      document.head.appendChild(script);
+      const metadata = generatePrincipleMetadata(principle);
+      updatePageMetadata(metadata);
     }
   }, [principle]);
 
