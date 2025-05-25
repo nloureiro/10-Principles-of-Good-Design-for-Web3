@@ -7,11 +7,25 @@ on:
   pull_request:
     branches:
       - main
+    types: [closed]
 
 jobs:
   deploy:
+    # Only run on main branch pushes or merged PRs
+    if: github.ref == 'refs/heads/main' || (github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'main')
     runs-on: ubuntu-latest
     name: Deploy to Cloudflare Pages
+    
+    # Add environment protection (optional but recommended)
+    environment:
+      name: production
+      url: https://web3-design-principles.pages.dev
+    
+    # Security: Limit permissions
+    permissions:
+      contents: read
+      deployments: write
+      pull-requests: write
     
     steps:
       - name: Checkout
