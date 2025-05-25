@@ -86,10 +86,10 @@ export default function PrincipleDetail() {
           {/* Main heading */}
           <div className="mb-16">
             <h3 className="text-xl text-secondary mb-6 font-serif">Good design for Web3</h3>
-            <h1 className="text-7xl md:text-8xl lg:text-9xl font-bold text-primary font-serif leading-none mb-8">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-primary font-serif leading-none mb-8">
               is {principle.title.toLowerCase()}
             </h1>
-            <h2 className="text-3xl text-secondary max-w-2xl font-sans font-normal">{principle.summary}</h2>
+            <h2 className="text-xl md:text-2xl lg:text-3xl text-secondary max-w-2xl font-sans font-normal">{principle.summary}</h2>
           </div>
         </div>
       </div>
@@ -99,7 +99,7 @@ export default function PrincipleDetail() {
           {/* Content */}
           <div className="mb-20">
             <div 
-              className="prose prose-xl max-w-none text-secondary [&>h2]:text-primary [&>h2]:font-serif [&>h2]:text-4xl [&>h2]:mb-6 [&>h3]:text-primary [&>h3]:font-serif [&>h3]:text-2xl [&>h3]:mb-4 [&>p]:text-secondary [&>p]:text-lg [&>p]:leading-relaxed [&>p]:mb-6"
+              className="prose prose-xl max-w-none text-secondary [&>h2]:text-primary [&>h2]:font-serif [&>h2]:text-4xl [&>h2]:mb-6 [&>h3]:text-primary [&>h3]:font-serif [&>h3]:text-2xl [&>h3]:mb-4 [&>p]:text-secondary [&>p]:text-base [&>p]:md:text-lg [&>p]:leading-relaxed [&>p]:mb-6"
               dangerouslySetInnerHTML={{ __html: renderMarkdown(principle.content) }}
             />
           </div>
