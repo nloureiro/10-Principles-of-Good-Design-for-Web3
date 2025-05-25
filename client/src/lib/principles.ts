@@ -8,8 +8,6 @@ const principlesData: Principle[] = [
     summary: "Put control in users' hands — not platforms.",
     image: "https://images.unsplash.com/photo-1639762681057-408e52192e55?auto=format&fit=crop&w=600&h=400",
     content: `
-## Core Idea: Put control in users' hands — not platforms.
-
 Decentralization transforms users from passive participants into active custodians of their digital lives. Interfaces should respect that by enabling users to manage their data and access without relying on centralized gatekeepers.
 
 ### Example:
@@ -29,8 +27,6 @@ Start with progressive decentralization. Use centralized elements to reduce fric
     summary: "Give users meaningful control — and the knowledge to use it.",
     image: "https://images.unsplash.com/photo-1507146153580-69a1fe6d8aa1?auto=format&fit=crop&w=600&h=400",
     content: `
-## Core Idea: Give users meaningful control — and the knowledge to use it.
-
 Web3 shifts ownership to the user, but that comes with responsibility. A good interface gives people clarity, options, and confidence — whether managing assets, permissions, or identity.
 
 ### Example:
@@ -50,8 +46,6 @@ Not everyone wants full control. Offer role-based flows — e.g. beginner, advan
     summary: "Show what's happening — clearly and consistently.",
     image: "https://images.unsplash.com/photo-1633613286991-611fe299c4be?auto=format&fit=crop&w=600&h=400",
     content: `
-## Core Idea: Show what's happening — clearly and consistently.
-
 Blockchain is open by nature, but that doesn't mean users understand it. Good design makes transaction flows, fees, and risks visible and understandable.
 
 ### Example:
@@ -71,8 +65,6 @@ Use progressive disclosure. Show essentials by default, then let users dive deep
     summary: "Make safe choices the default — without killing UX.",
     image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=600&h=400",
     content: `
-## Core Idea: Make safe choices the default — without killing UX.
-
 Web3 users interact directly with contracts, wallets, and money. Design must prevent mistakes, not just warn about them after the fact.
 
 ### Example:
@@ -92,8 +84,6 @@ Don't overdo alerts. Calibrate by risk level: mild nudge for small transfers, se
     summary: "Trust is earned through clarity, consistency, and honest UI.",
     image: "https://images.unsplash.com/photo-1521790361543-f645cf042ec4?auto=format&fit=crop&w=600&h=400",
     content: `
-## Core Idea: Trust is earned through clarity, consistency, and honest UI.
-
 In Web3, there's no brand middleman — the interface *is* the trust layer. That means it needs to be honest about what's happening and predictable in how it behaves.
 
 ### Example:
@@ -113,8 +103,6 @@ Add trust signals: verification badges, contract previews, and readable labels. 
     summary: "Make it simple for everyone — not just early adopters.",
     image: "https://images.unsplash.com/photo-1531498860502-7c67cf02f657?auto=format&fit=crop&w=600&h=400",
     content: `
-## Core Idea: Make it simple for everyone — not just early adopters.
-
 Web3 is complex under the hood, but users shouldn't need to understand crypto to use it. Design should lower the learning curve and remove barriers.
 
 ### Example:
@@ -134,8 +122,6 @@ Design in layers. Start simple, and let users unlock complexity as they grow.
     summary: "Build for everyone, not just \"crypto-native\" users.",
     image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=600&h=400",
     content: `
-## Core Idea: Build for everyone, not just "crypto-native" users.
-
 Inclusivity means supporting different backgrounds, cultures, devices, and levels of technical experience. Design should welcome people, not gatekeep.
 
 ### Example:
@@ -155,8 +141,6 @@ Don't just design for yourself. Create personas across cultures and experience l
     summary: "Openness drives collaboration, community, and innovation.",
     image: "https://images.unsplash.com/photo-1664575602276-acd073f104c1?auto=format&fit=crop&w=600&h=400",
     content: `
-## Core Idea: Openness drives collaboration, community, and innovation.
-
 Web3 thrives on open standards, shared protocols, and community-driven development. Your design should reflect and support that.
 
 ### Example:
@@ -176,8 +160,6 @@ Use open standards, shared UI patterns, and cross-app consistency. Don't trap us
     summary: "Design with purpose — tech is not neutral.",
     image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=600&h=400",
     content: `
-## Core Idea: Design with purpose — tech is not neutral.
-
 Web3 design should strive to widen access, reduce bias, and build systems that serve more than just the loudest voices.
 
 ### Example:
@@ -197,8 +179,6 @@ Measure impact — not just usage. Who benefits from your design? Who's left out
     summary: "Design for change — not just for now.",
     image: "https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?auto=format&fit=crop&w=600&h=400",
     content: `
-## Core Idea: Design for change — not just for now.
-
 Web3 is evolving fast. Your design should be resilient, flexible, and able to adapt as protocols, wallets, and user expectations shift.
 
 ### Example:

@@ -89,7 +89,7 @@ export default function PrincipleDetail() {
             <h1 className="text-7xl md:text-8xl lg:text-9xl font-bold text-primary font-serif leading-none mb-8">
               is {principle.title.toLowerCase()}
             </h1>
-            <p className="text-2xl text-secondary max-w-2xl">{principle.summary}</p>
+            <h2 className="text-3xl text-secondary max-w-2xl font-sans font-normal">{principle.summary}</h2>
           </div>
         </div>
       </div>
