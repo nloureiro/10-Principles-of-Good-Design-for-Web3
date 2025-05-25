@@ -98,10 +98,45 @@ export default function PrincipleDetail() {
         <div className="max-w-4xl mx-auto">
           {/* Content */}
           <div className="mb-20">
-            <div 
-              className="prose prose-xl max-w-none text-secondary [&>h2]:text-primary [&>h2]:font-serif [&>h2]:text-4xl [&>h2]:mb-6 [&>h3]:text-primary [&>h3]:font-serif [&>h3]:text-2xl [&>h3]:mb-4 [&>p]:text-secondary [&>p]:text-base [&>p]:md:text-lg [&>p]:leading-relaxed [&>p]:mb-6"
-              dangerouslySetInnerHTML={{ __html: renderMarkdown(principle.content) }}
-            />
+            {/* Main description paragraph */}
+            <div className="mb-16">
+              <p className="text-base md:text-lg text-secondary leading-relaxed max-w-3xl">
+                {principle.content.split('\n\n')[0].trim()}
+              </p>
+            </div>
+            
+            {/* Two column layout for desktop */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+              {/* Left column */}
+              <div className="space-y-12">
+                {/* Example section */}
+                <div>
+                  <h3 className="text-2xl lg:text-3xl font-serif text-primary mb-6">Example</h3>
+                  <p className="text-base md:text-lg text-secondary leading-relaxed">
+                    {principle.content.split('### Example:')[1]?.split('### Case in Practice:')[0]?.trim() || ''}
+                  </p>
+                </div>
+                
+                {/* Case in Practice section */}
+                <div>
+                  <h3 className="text-2xl lg:text-3xl font-serif text-primary mb-6">Applied</h3>
+                  <p className="text-base md:text-lg text-secondary leading-relaxed">
+                    {principle.content.split('### Case in Practice:')[1]?.split('### Design Tip:')[0]?.trim() || ''}
+                  </p>
+                </div>
+              </div>
+              
+              {/* Right column */}
+              <div>
+                {/* Design Tip section */}
+                <div>
+                  <h3 className="text-2xl lg:text-3xl font-serif text-primary mb-6">Design Tip:</h3>
+                  <p className="text-base md:text-lg text-secondary leading-relaxed">
+                    {principle.content.split('### Design Tip:')[1]?.trim() || ''}
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
           
           {/* Navigation between principles */}
